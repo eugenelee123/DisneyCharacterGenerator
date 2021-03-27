@@ -4,5 +4,5 @@ To run:
 2. Run `flask run`
 3. Navigate to http://127.0.0.1:5000/ and you should see the app.
 
-or:
+or: <br>
 ./run
