@@ -1,9 +1,43 @@
 {% extends "base.html" %}
-{% block title %}Disney Character Generation{% endblock %}
+{% block title %}Disney Character Generator{% endblock %}
 {% block body %}
 
-testtest
-this is from Ubuntu server
+<style>
+    body{
+        margin: 20px 20px 20px 20px;
+        text-align: center;
+    }
+    h1{
+        color: green;
+    }
+</style>
 
+<body>
+    <h1>Welcome to the Disney Character Generator!</h1>
+    <h2>This project was built for TuffyHacks 2021</h2>
+    <p>Team Name: Cool Cats</p>
+    <p>Team Members: Eugene Lee, Lamisha Sultana, Yifan Wu</p>
+    <h2>About the Project</h2>
+    <p>We trained a Deep Convolutional GAN (which took a really long time) on a little over 60,000 training images from popular Disney movies & TV shows. Given the short time frame for the Hackathon, we made use of many libraries including PyTorch and Fastai which aided in our develpment process. If you look below, you can see our results!</p>
+    <h2>Here are the Generated Disney Characters!</h2>
+    <img src = "">
+    <button id = "newCharacter">Generate a new Disney Character!</button>
+</body>
+
+<script>
+    $("#newCharacter").click(
+        function(){
+            $.ajax({
+                url: "{{url_for('get_img')}}",
+                type: "GET",
+            }).done(
+                function(res){
+                    $("#newCharacter").attr('src', res);
+                }
+            )
+        }
+    );
+    
+</script>
 
 {% endblock %}
