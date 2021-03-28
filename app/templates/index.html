@@ -20,15 +20,33 @@
     <h2>About the Project</h2>
     <p>We trained a Deep Convolutional GAN (which took a really long time) on a little over 60,000 training images from popular Disney movies & TV shows. Given the short time frame for the Hackathon, we made use of many libraries including PyTorch and Fastai which aided in our develpment process. If you look below, you can see our results!</p>
     <h2>Here are the Generated Disney Characters!</h2>
-    <img src = "">
-    <button id = "newCharacter">Generate a new Disney Character!</button>
+    <p style = "color:red">Update: We did not finish, since the model is still training. Below is an example of what the model output with 1 training epoch</p>
+    <br>
+    <button id="newCharacter">Generate a new Disney Character!</button>
+    <br><br>
+    <img src = "{{img}}">
+    
+    
 </body>
 
-<script>
+<!-- <script>
+    $(document).ready(
+        function () {
+            $.ajax({
+                url: "{{url_for('display_image')}}",
+                type: "GET",
+            }).done(
+                function (res) {
+                    $("#newCharacter").attr('src', res);
+                }
+            )
+        }
+    );
+
     $("#newCharacter").click(
         function(){
             $.ajax({
-                url: "{{url_for('get_img')}}",
+                url: "{{url_for('display_image')}}",
                 type: "GET",
             }).done(
                 function(res){
@@ -38,6 +56,6 @@
         }
     );
     
-</script>
+</script> -->
 
 {% endblock %}
